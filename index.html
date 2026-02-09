@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nuestra Historia</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      margin: 0;
+      background: #ffffff;
+      color: #7a0c0c;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px;
+      background: #7a0c0c;
+      color: #ffffff;
+    }
+
+    section {
+      padding: 50px 30px;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #7a0c0c;
+      box-shadow: 0 6px 20px rgba(122, 12, 12, 0.15);
+    }
+
+    h1, h2 {
+      color: #7a0c0c;
+      text-align: center;
+      letter-spacing: 1.5px;
+    }
+
+    header h1, header p {
+      color: #ffffff;
+    }
+
+    .dedicatoria {
+      font-size: 1.15em;
+      line-height: 1.8;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .foto-card {
+      border: 1px solid #7a0c0c;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 10px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .foto-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #7a0c0c;
+    }
+
+    .historia-foto {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      border: 1px solid #7a0c0c;
+      border-radius: 6px;
+      font-family: Georgia, serif;
+      resize: none;
+      color: #7a0c0c;
+    }
+
+    .historia-foto::placeholder {
+      color: #b45c5c;
+    }
+
+    
+    .carta {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 50px 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 2px solid #7a0c0c;
+      box-shadow: 0 6px 20px rgba(122, 12, 12, 0.15);
+    }
+
+    .carta p {
+      line-height: 1.9;
+      margin: 15px 0;
+      text-align: justify;
+    }
+
+    .firma {
+      margin-top: 30px;
+      text-align: right;
+      font-style: italic;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .contador {
+      font-size: 1.4em;
+      font-weight: bold;
+      text-align: center;
+      color: #7a0c0c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #ffffff;
+      background: #7a0c0c;
+    }
+
+    .flores-section {
+  min-height: 320px;
+  border: 2px solid #7a0c0c;
+  border-radius: 12px;
+  margin: 50px auto;
+  max-width: 1000px;
+  padding: 80px 30px;           
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+
+    .flor {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      animation: flotar 10s linear infinite;
+      opacity: 0.9;
+    }
+
+    .petalo {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: #ffffff;           
+  border-radius: 50%;
+  top: 5px;
+  left: 10px;
+  transform-origin: bottom center;
+  border: 1.5px solid #7a0c0c;   
+  box-shadow: 0 2px 6px rgba(122, 12, 12, 0.25);
+}
+
+    .petalo:nth-child(1) { transform: rotate(0deg); }
+    .petalo:nth-child(2) { transform: rotate(72deg); }
+    .petalo:nth-child(3) { transform: rotate(144deg); }
+    .petalo:nth-child(4) { transform: rotate(216deg); }
+    .petalo:nth-child(5) { transform: rotate(288deg); }
+
+    .centro {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #7a0c0c;           
+  border-radius: 50%;
+  top: 15px;
+  left: 15px;
+  box-shadow: 0 2px 6px rgba(122, 12, 12, 0.35);
+}
+    
+.foto-especial {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #7a0c0c;
+  box-shadow: 0 6px 20px rgba(122, 12, 12, 0.15);
+  text-align: center;
+}
+
+.foto-especial img {
+  max-width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #7a0c0c;
+}
+
+
+    @keyframes flotar {
+      from {
+        transform: translateY(110%) rotate(0deg);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(-120%) rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .galeria { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .galeria { grid-template-columns: 1fr; }
+    }
+
+  
+@media (max-width: 768px) {
+  header {
+    padding: 40px 15px;
+  }
+
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  section,
+  .carta,
+  .foto-especial,
+  .flores-section {
+    margin: 20px 10px;
+    padding: 25px 15px;
+  }
+
+  .dedicatoria {
+    font-size: 1em;
+    text-align: left;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+
+  .foto-card img {
+    height: 180px;
+  }
+
+  .historia-foto {
+    font-size: 0.95em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .contador {
+    font-size: 1.1em;
+  }
+
+  footer {
+    font-size: 0.9em;
+    padding: 18px 10px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 1.4em;
+  }
+
+  .foto-card img {
+    height: 150px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hola amor</h1>
+    <p>Este es un pequeño lugar para recordar lo mucho que te amo</p>
+  </header>
+
+ 
+  <section>
+    <h2>Kenneth</h2>
+    <p class="dedicatoria">
+      Hola xd, me gustaria decirte y recordarte cosas que pienso, varias veces recuerdo cuando te conocí; de hecho, he hablado eso contigo. Realmente era algo que sucedió de repente y, desde ese momento, me he dado cuenta de que eres alguien lindo, alguien atento que ha hecho varias cosas por mí, por hacerme sentir mejor; alguien que ha buscado la forma de ayudarme, de hacer las cosas juntos, y eso ha sido muy importante. No habría palabras o forma de expresar lo feliz que me has hecho. Nunca me cansaré de decirte que te amo de aquí hasta el fin de los dígitos de pi. Estoy muy orgulloso de ti, de todo lo que has logrado, y siempre te apoyaré.
+    </p>
+
+    <div class="galeria">
+      
+      <div class="foto-card">
+        <img src="foto1.jpg">
+        <textarea class="historia-foto" rows="3" placeholder="Este día te veías muy lindo acariciando cabras, jajajaj."></textarea>
+      </div>
+      <div class="foto-card">
+        <img src="foto2.jpeg">
+        <textarea class="historia-foto" rows="3" placeholder="Mira, el cumpleañero más lindo :3"></textarea>
+      </div>
+      <div class="foto-card">
+        <img src="foto3.jpeg">
+        <textarea class="historia-foto" rows="3" placeholder="Estar contigo es el mejor plan"></textarea>
+      </div>
+      <div class="foto-card">
+        <img src="foto4.jpeg">
+        <textarea class="historia-foto" rows="3" placeholder="Tú eres el unico regalo que quiero"></textarea>
+      </div>
+      <div class="foto-card">
+        <img src="foto5.jpeg">
+        <textarea class="historia-foto" rows="3" placeholder="Está quedó chistosa xd"></textarea>
+      </div>
+      <div class="foto-card">
+        <img src="foto6.jpg">
+        <textarea class="historia-foto" rows="3" placeholder="A donde sea mientras este contigo"></textarea>
+      </div>
+      <div class="foto-card">
+        <img src="foto7.jpg">
+        <textarea class="historia-foto" rows="3" placeholder="Me veo mejor a tu lado"></textarea>
+      </div>
+      <div class="foto-card">
+        <img src="foto8.jpg">
+        <textarea class="historia-foto" rows="3" placeholder="Las mejores fotos con la mejor persona"></textarea>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="carta">
+    <h2>Yo otra vez jajajja</h2>
+    <p>
+     Me gusta mucho estar contigo, jajajajaj; es como que, aunque todo esté mal, se sienta perdido, confuso o lo que sea, estar a tu lado ayuda a olvidar eso. 
+     Siento que, después de tener un mal día, pensar en ti ayuda mucho. Recuerdo cuando salía de trabajar y verte 
+     o estar contigo ayudaba mucho; después de todo este tiempo, sigo pensando igual: eres alguien que se ha esforzado mucho y me
+    hace feliz hacer parte de tu vida para ver eso. Sé que vas a lograr todo lo que te propongas; mira que siempre va a pasar algo, cosas buenas o malas,
+     pero siempre estaremos juntos para afrontar todo. Tú y yo será más fuerte que cualquier cosa. Te amoooooooo.
+    </p>
+    <p>
+     Nunca estarás solo; tú eres muy importante para mí y espero que en cada acción se note esto. Cada día me he enamorado más de ti.
+    </p>
+    <p class="firma">
+      Con amor,<br>
+      Juan Sebastian 
+    </p>
+  </div>
+
+  <section class="flores-section" id="floresSection">
+    <h2>Flores para ti</h2>
+    <p>Estas flores están dibujadas solo para ti. Las flores son tan lindas como tú.</p>
+  </section>
+  
+<div class="foto-especial">
+  <h2>De mis fotos favoritas</h2>
+  <img src="foto-especial.jpeg" alt="Nuestra foto favorita">
+  <p style="margin-top: 15px;">
+    “Si el Principito te conociera, entendería que no hacen falta más planetas por visitar, porque cuando uno encuentra a alguien que cuida su corazón, que lo acompaña
+     incluso en los días grises y que lo hace sonreír sin darse cuenta, ya encontró su lugar en el universo. Contigo, yo ya encontré el mío.”
+  </p>
+</div>
+
+  <section>
+    <h2>Sueño contigo</h2>
+    <p>Diría que esta canción representa muy bien lo que pasa cuando pienso en ti.</p>
+    <audio controls>
+      <source src="cancion.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <section>
+    <h2>Nuestro tiempo juntos (Y falta mucho más)</h2>
+    <p class="contador" id="contador"></p>
+  </section>
+
+  <footer>
+    <p>Hecho con amor :3</p>
+  </footer>
+
+  <script>
+    const contenedor = document.getElementById("floresSection");
+
+    function crearFlor() {
+      const flor = document.createElement("div");
+      flor.classList.add("flor");
+
+      for (let i = 0; i < 5; i++) {
+        const petalo = document.createElement("div");
+        petalo.classList.add("petalo");
+        flor.appendChild(petalo);
+      }
+
+      const centro = document.createElement("div");
+      centro.classList.add("centro");
+      flor.appendChild(centro);
+
+      flor.style.left = Math.random() * 90 + "%";
+      flor.style.animationDuration = (8 + Math.random() * 6) + "s";
+
+      contenedor.appendChild(flor);
+      setTimeout(() => flor.remove(), 12000);
+    }
+
+    setInterval(crearFlor, 700);
+
+    const fechaInicio = new Date("2025-08-01");
+    const contador = document.getElementById("contador");
+
+    function actualizarContador() {
+      const hoy = new Date();
+      const diferencia = hoy - fechaInicio;
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      contador.innerText = `Llevamos ${dias} días juntos`;
+    }
+
+    actualizarContador();
+  </script>
+
+</body>
+</html>
